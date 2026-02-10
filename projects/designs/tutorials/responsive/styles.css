@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.parent div {
+    padding: 20px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {}
+
+/* Small */
+
+@media (min-width: 768px) {
+    .parent div {
+        width: calc(50% - 10px);
+    }
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .parent div {
+        width: calc(25% - 10px);
+    }
+}
+
+/* Large */
+
+@media (min-width: 1200px) {}

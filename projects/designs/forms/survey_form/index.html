@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Survey Form</h1>
+      <p id="description">
+        Thank you for taking the time to help us improve the platform
+      </p>
+    </header>
+
+    <form id="survey-form" action="" method="post">
+      <fieldset class="name">
+        <label id="name-label"
+          >Name<input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            required
+        /></label>
+      </fieldset>
+
+      <fieldset class="email">
+        <label id="email-label"
+          >Email<input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+        /></label>
+      </fieldset>
+
+      <fieldset class="age">
+        <label id="number-label"
+          >Age<input
+            id="number"
+            type="number"
+            min="12"
+            max="120"
+            placeholder="Age"
+            required
+        /></label>
+      </fieldset>
+
+      <fieldset class="gender">
+        <label id="gender-label">Gender</label>
+        <div class="radio-buttons">
+          <label id="gender-one" for="male-gender"
+            ><input
+              id="male-gender"
+              type="radio"
+              value="male-gender"
+              name="gender"
+            />Male</label
+          >
+          <label id="gender-two" for="female-gender"
+            ><input
+              id="female-gender"
+              type="radio"
+              value="female-gender"
+              name="gender"
+            />Female</label
+          >
+          <label id="gender-three" for="Prefer-not-to-say"
+            ><input
+              id="Prefer-not-to-say"
+              type="radio"
+              value="Prefer-not-to-say"
+              name="gender"
+            />Prefer not to say</label
+          >
+        </div>
+      </fieldset>
+
+      <fieldset class="job-title">
+        <label id="job-label">Job Title</label>
+        <select id="dropdown">
+          <option value="" disabled selected>Select your job</option>
+          <option value="student">Student</option>
+          <option value="developer">Developer</option>
+          <option value="designer">Designer</option>
+          <option value="engineer">Engineer</option>
+          <option value="teacher">Teacher</option>
+          <option value="doctor">Doctor</option>
+          <option value="manager">Manager</option>
+        </select>
+      </fieldset>
+
+      <fieldset class="interests">
+        <label>Interests</label>
+        <div class="checkboxes">
+          <label
+            ><input type="checkbox" value="programming" /> Programming</label
+          >
+          <label><input type="checkbox" value="gaming" /> Gaming</label>
+          <label><input type="checkbox" value="sports" /> Sports</label>
+          <label><input type="checkbox" value="traveling" /> Traveling</label>
+          <label><input type="checkbox" value="reading" /> Reading</label>
+          <label><input type="checkbox" value="music" /> Music</label>
+          <label><input type="checkbox" value="movies" /> Movies</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="comments">
+        <label>Suggestions</label>
+        <textarea
+          type="textarea"
+          rows="3"
+          cols="30"
+          placeholder="Any comments or suggestions?..."
+        ></textarea>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <input id="submit" type="submit" />
+    </form>
+  </body>
+</html>

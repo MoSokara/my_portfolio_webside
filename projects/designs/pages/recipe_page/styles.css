@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.recipe-page {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid black;
+}
+
+.recipe-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recipe-header h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.recipe-header p {
+    display: flex;
+    text-align: left;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.recipe-header img {
+    display: flex;
+    max-width: 100%;
+}

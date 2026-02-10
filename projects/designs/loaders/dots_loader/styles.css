@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.loader div {
+    background-color: rgb(254, 56, 56);
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+}
+
+.loader .two {
+    animation-delay: 0.3s;
+}
+
+.loader .three {
+    animation-delay: 0.6s;
+}
+
+
+@keyframes loading {
+    to {
+        opacity: 0.2;
+        transform: translateY(10px) scale(1.1);
+    }
+}

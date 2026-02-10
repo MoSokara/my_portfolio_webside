@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+form {
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    background: #4CAF50;
+    padding: 20px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+form label {
+    color: white;
+    border: none;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"] {
+    color: black;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.gender {
+    margin-bottom: 20px;
+}
+
+.gender label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form select {
+    color: black;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.gender input[type="radio"] {
+    margin-right: 5px;
+}
+
+form input[type="checkbox"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="checkbox"]:checked {
+    background-color: #45a049;
+}
+
+form textarea {
+    color: black;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    resize: none;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
