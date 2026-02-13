@@ -1,126 +1,208 @@
-/* Global Rules */
+/* =============================== Sokara Brand Identity - Modern UI ================================= */
+
 :root {
-    --font-color: #1c1c28;
-    --background-color-1: #2a2a3c;
-    --background-color-2: #1c1c28;
-    --normal-color: #1ec1cb;
-    --hover-color: #1baab1;
+
+    /* Text */
+    --text-primary: #F5F5F5;
+    --text-secondary: #9E9E9E;
+
+    /* Brand */
+    --primary: #6A0D0D;
+    --primary-hover: #8B1E1E;
+
+    --accent: #C75C2A;
+    --accent-hover: #E07A3F;
+
+    /* Background */
+    --bg-main: #0E0E0E;
+    --bg-section: #151515;
+    --bg-soft: #1C1C1C;
+
+    --shadow: rgba(0, 0, 0, 0.45);
 }
 
+/* =============================== Reset ================================= */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+/* =============================== Body ================================= */
+
+body {
+    font-family: 'Cairo', Tahoma, sans-serif;
+    background: radial-gradient(circle at top left, #1A0A0A, var(--bg-main));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =============================== Scrollbar ================================= */
 
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--background-color-1);
+    background: var(--bg-soft);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--normal-color);
+    background: var(--accent);
+    border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--hover-color);
+    background: var(--accent-hover);
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--background-color-1);
-}
+/* =============================== Layout ================================= */
 
 .container {
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 10px;
 }
 
-/* Small */
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
+.content {
+    background: linear-gradient(145deg, var(--bg-section), #1a1010);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 30px 60px var(--shadow);
+    border: 1px solid rgba(199, 92, 42, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-/* Medium */
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
+/* =============================== Top Bar ================================= */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+    z-index: 10;
 }
 
-/* Large */
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
+.back-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg-soft);
+    color: var(--accent);
+    font-size: 20px;
+
+    border: 1px solid rgba(199, 92, 42, 0.25);
+    transition: all 0.35s ease;
+    text-decoration: none;
 }
+
+/* Arrow animation */
+.back-btn i {
+    transition: 0.35s ease;
+}
+
+/* Hover Effects */
+.back-btn:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(199, 92, 42, 0.45);
+}
+
+.back-btn:hover i {
+    color: #fff;
+}
+
+.back-btn::after {
+    content: "Back";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: var(--accent);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.back-btn:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* =============================== Content ================================= */
 
 h1 {
-    color: var(--normal-color);
-    text-align: left;
-    margin-top: 50px;
-    padding-left: 50px;
+    font-size: 42px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 17px;
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 50px;
-}
-
-li {
     list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: var(--font-color);
-    background-color: var(--normal-color);
-    padding: 10px 20px;
-    display: block;
-    width: fit-content;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-li:last-of-type a {
-    background-color: var(--background-color-1);
-    color: var(--hover-color);
-}
-
-a:hover {
-    transform: translateX(10px);
-}
-
-/* Main Section */
-
-.container .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: var(--background-color-2);
-}
-
-/* main .container ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    gap: 18px;
 }
 
-@media (max-width: 767px) {
-    main .container ul {
-        grid-template-columns: minmax(100px, 1fr);
-        padding: 0 10px;
-        gap: 20px;
+ul a {
+    text-decoration: none;
+    padding: 18px 25px;
+    border-radius: 15px;
+    display: block;
+
+    background: var(--bg-soft);
+    color: var(--text-primary);
+
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    transition: all 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Hover Effect */
+ul a:hover {
+    transform: translateX(8px);
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border: 1px solid var(--accent);
+    box-shadow: 0 15px 30px rgba(199, 92, 42, 0.4);
+}
+
+/* =============================== Responsive ================================= */
+
+@media (max-width: 768px) {
+
+    .content {
+        padding: 40px 25px;
     }
-} */
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .back-btn {
+        width: 48px;
+        height: 48px;
+    }
+}

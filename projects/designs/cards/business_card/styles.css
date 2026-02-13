@@ -6,7 +6,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: rosybrown;
+    background-color: #d6e2f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
 p {
@@ -24,36 +29,85 @@ hr {
 }
 
 .business-card {
-    width: 300px;
+    width: 400px;
     padding: 20px;
-    margin: 30px auto 0 auto;
+    margin: 0 auto;
+    border-radius: 20px;
     font-size: 16px;
-    background-color: whitesmoke;
+    background-color: white;
     text-align: center;
     border: 2px solid black;
+    transition: 0.3s;
+}
+
+.business-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .profile-image {
     max-width: 100%;
+    border-radius: 10px;
     height: auto;
 }
 
 .full-name {
+    color: #0073e6;
     font-size: 24px;
     font-weight: bold;
 }
 
-.designation {
+.job-title {
     font-size: 18px;
-    color: gray;
+    color: #0073e6;
 }
 
-.company {
-    font-size: 18px;
-    color: darkgray;
+.business-card a {
+    color: #0073e6;
 }
 
-.social-media a {
-    margin: 0 10px;
-    color: black;
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.actions a {
+    display: block;
+    background-color: #d6e2f0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #0073e6;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.actions a:hover {
+    background-color: #c0d4e8;
+}
+
+.social-media .links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media .links a {
+    font-size: 22px;
+    color: #0073e6;
+    background-color: #d6e2f0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.social-media .links a:hover {
+    background-color: #c0d4e8;
+}
+
+.social-media h2 {
+    color: #0073e6;
+    font-size: 22px;
+    margin-bottom: 10px;
 }

@@ -1,42 +1,31 @@
 /* ------------ Globel Rules ------------ */
-:root {
-    /* ===== Text Colors ===== */
-    /* Main headings and primary text */
-    --text-primary: #F5F5F5;
-    /* Paragraphs and secondary text */
-    --text-secondary: #B3B3B3;
-    /* Highlighted words or emphasized text */
-    --text-accent: #C75C2A;
 
-    /* ===== Brand Colors ===== */
-    /* Primary brand color (Burgundy) */
+:root {
+
+    /* Text */
+    --text-primary: #F5F5F5;
+    --text-secondary: #9E9E9E;
+
+    /* Brand */
     --primary: #6A0D0D;
-    /* Hover state for primary elements */
     --primary-hover: #8B1E1E;
 
-    /* Accent color for interactions */
     --accent: #C75C2A;
-    /* Hover state for accent elements */
     --accent-hover: #E07A3F;
 
-    /* ===== Background Colors ===== */
-    /* Main page background */
+    /* Background */
     --bg-main: #0E0E0E;
-    /* Sections and card backgrounds */
     --bg-section: #151515;
-    /* Slightly lighter layered background */
-    --bg-soft: #1A1A1A;
+    --bg-soft: #1C1C1C;
 
-    /* ===== Shadow ===== */
-    /* Global shadow color */
-    --shadow: rgba(0, 0, 0, 0.2);
+    --shadow: rgba(0, 0, 0, 0.45);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cairo', Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -104,7 +93,7 @@ header .container {
 
 .name-header {
     font-size: 2rem;
-    color: var(--text-primary);
+    color: var(--accent);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -143,7 +132,7 @@ hr {
 }
 
 .section-header {
-    color: var(--text-accent);
+    color: var(--accent);
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: bold;
