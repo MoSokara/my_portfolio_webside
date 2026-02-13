@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -43,15 +47,38 @@
               Hi There! <br />
               I'm <span class="name">Sokara</span>
             </h1>
-            <h2 class="job-title">Frontend Developer</h2>
+            <h2 class="job-title">MERN Stack Developer</h2>
             <p class="description">
-              I am a Frontend Developer with a passion for creating responsive
-              web applications. I specialize in frontend development, ensuring
-              seamless user experiences.
+              Aspiring MERN Stack Developer building full-stack web applications
+              using MongoDB, Express, React, and Node.js. Turning ideas into
+              real, scalable digital products.
             </p>
             <div class="actions">
               <a href="#contact">Contact Me</a>
               <a download="">Download CV</a>
+              <div class="links">
+                <a
+                  class="contact-item"
+                  href="https://www.linkedin.com/in/mosokara"
+                  title="LinkedIn"
+                  target="_blank"
+                  ><i class="bx bxl-linkedin"></i
+                ></a>
+                <a
+                  class="contact-item"
+                  href="https://www.facebook.com/profile.php?id=100076059795902"
+                  title="Facebook"
+                  target="_blank"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a
+                  class="contact-item"
+                  href="https://github.com/MoSokara"
+                  title="GitHub"
+                  target="_blank"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
             </div>
           </div>
 
@@ -68,23 +95,17 @@
       <!-- About Section -->
       <section class="about" id="about">
         <div class="container">
-          <div class="image">
-            <img
-              class="section-image"
-              src="assets/My-Photo.jpg"
-              alt="My Hero Photo"
-            />
-          </div>
-
           <div class="info">
             <h2 class="section-header">About Me</h2>
             <p class="description">
-              Hello! I'm Mohamed Sokara, I'm from Egypt, I'm learning in FUL
-              University, I'm a frontend developer with expertise in HTML, CSS,
-              JavaScript, and React framework. I love solving problems and
-              building products that make a difference. My journey in tech
-              started with curiosity and grew into a career filled with exciting
-              projects and collaborations.
+              Hello! I'm Mohamed Sokara, a MERN Stack Developer from Egypt and a
+              Computer Science student at the Faculty of Computers and
+              Information, Menoufia University. I build scalable full-stack web
+              applications using MongoDB, Express.js, React, and Node.js, with a
+              strong foundation in core web technologies and software
+              engineering principles. I’m passionate about problem-solving,
+              clean architecture, and continuously expanding my knowledge across
+              different areas of the software industry.
             </p>
             <div class="information">
               <div class="information-name">
@@ -98,8 +119,10 @@
                 <p>: Mohamed Abdo Sokara</p>
                 <p>: 18 year</p>
                 <p>: Shirbin - Dakahlia - Egypt</p>
-                <p>: +20 01023827379</p>
-                <p>: mosokara2007@gmail.com</p>
+                <a href="tel:+201023827379">: +20 01023827379</a>
+                <a href="mailto:mosokara2007@gmail.com"
+                  >: mosokara2007@gmail.com</a
+                >
               </div>
             </div>
           </div>
@@ -131,45 +154,7 @@
       <section class="contact" id="contact">
         <div class="container">
           <h2 class="section-header">Contact</h2>
-          <div class="links">
-            <a class="contact-item" href="#" title="LinkedIn"
-              ><img src="assets/icons/linkedin.svg" alt="LinkedIn Logo"
-            /></a>
-            <a class="contact-item" href="#" title="Facebook"
-              ><img src="assets/icons/facebook.svg" alt="Facebook Logo"
-            /></a>
-            <a class="contact-item" href="#" title="X"
-              ><img src="assets/icons/x.svg" alt="X Logo"
-            /></a>
-            <a class="contact-item" href="#" title="Instagram"
-              ><img src="assets/icons/instagram.svg" alt="Instagram Logo"
-            /></a>
-            <a class="contact-item" href="#" title="YouTube"
-              ><img src="assets/icons/youtube.svg" alt="YouTube Logo"
-            /></a>
-            <a class="contact-item" href="#" title="TikTok"
-              ><img src="assets/icons/tiktok.svg" alt="TikTok Logo"
-            /></a>
-            <a class="contact-item" href="#" title="Telegram"
-              ><img src="assets/icons/telegram.svg" alt="Telegram Logo"
-            /></a>
-            <a class="contact-item" href="#" title="WhatsUp"
-              ><img src="assets/icons/whatsapp.svg" alt="WhatsUp Logo"
-            /></a>
-            <a class="contact-item" href="#" title="Discord"
-              ><img src="assets/icons/discord.svg" alt="Discord Logo"
-            /></a>
-            <a class="contact-item" href="#" title="Reddit"
-              ><img src="assets/icons/reddit.svg" alt="Reddit Logo"
-            /></a>
-            <a class="contact-item" href="#" title="Pinterest"
-              ><img src="assets/icons/pinterest.svg" alt="Pinterest Logo"
-            /></a>
-          </div>
-          <hr />
-
           <div class="form">
-            <h3>Send Me</h3>
             <form action="">
               <fieldset class="user-information">
                 <input
@@ -178,6 +163,7 @@
                   id="name"
                   placeholder="Name"
                   title="Your name"
+                  autocomplete="name"
                   required
                 />
                 <input
@@ -186,6 +172,7 @@
                   id="phone"
                   placeholder="Phone"
                   title="Your phone number"
+                  autocomplete="tel"
                   required
                 />
                 <input
@@ -194,6 +181,7 @@
                   id="email"
                   placeholder="Email"
                   title="Your email"
+                  autocomplete="email"
                   required
                 />
               </fieldset>
@@ -216,5 +204,9 @@
     </main>
 
     <footer>&copy; 2025 Mohamed Sokara. All rights reserved.</footer>
+    <script
+      src="https://kit.fontawesome.com/43312d5f8f.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
