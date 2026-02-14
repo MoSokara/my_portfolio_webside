@@ -1,66 +1,84 @@
-## Web_Development
+# 🚀 My Portfolio — Web Development Projects
 
-This repository contains all my projects related to web development. It includes applications, designs, and projects for building modern web applications using various technologies such as HTML, CSS, JavaScript, and React framework.
-this README file provides an overview of the projects and applications included in this repository.
+<p align="center">
+	<img src="https://img.shields.io/badge/HTML5-orange?style=for-the-badge&logo=html5&logoColor=white" />
+	<img src="https://img.shields.io/badge/CSS3-blue?style=for-the-badge&logo=css3&logoColor=white" />
+	<img src="https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=black" />
+	<img src="https://img.shields.io/badge/Portfolio-green?style=for-the-badge" />
+</p>
 
-## Technologies Used
+---
 
-- HTML
-- CSS
-- Git & GitHub
+## 📌 Overview
 
-## Contents
+This repository contains personal web development projects by **Mohamed (Mo) Sokara**. It showcases static templates, UI designs, small apps, and experiments built primarily with **HTML**, **CSS**, and **vanilla JavaScript**. Many projects are portfolio-ready and intended to demonstrate frontend skills and responsive design techniques.
 
-### Applications
+## 🎯 Highlights
 
-> - ...Calculator
+- Portfolio landing page (`index.html`)
+- Multiple design components (cards, loaders, pages)
+- Small web applications (calculator, coin converter, todo list)
+- Template collections (multi-page template demos)
 
-### Designs
-> - Blog Post Card
-> - Business Card
-> ---
-> - Blog Page
-> - Checkout Page
-> - Login Page
-> - Recipe Page
-> ---
-> - Spinner Loader
-> - Dots Loader
-> ---
-> - Cafe Menu
-> - Registration Form
-> - Survey-form
-> - Responsive Design
-> - Stylized ToDo List
-> ---
-> - Grid Design
-> - Students Marks Table
+## 🗂️ Repository Structure
 
-### Templates
+```
+my_portfolio_webside/
+├── index.html                # Portfolio home
+├── styles.css                # Global styles
+├── assets/                   # JS, images, icons
+├── projects/                 # Organized project categories
+│   ├── designs/
+│   ├── applications/
+│   ├── games/
+│   └── templates/
+└── README.md
+```
 
-> - Portfolio Website
+For full details, explore the `projects/` subfolders.
 
+## 🛠️ Technologies
 
-### Projects
+- HTML5
+- CSS3 (Flexbox, Grid, Responsive Media Queries)
+- JavaScript (ES6+)
+- Font Awesome Free Icons
+- Google Fonts
 
-> ---
+## ▶️ Run Locally
 
-### Games
+1. Clone the repository:
 
-> ---
+```bash
+git clone https://github.com/MoSokara/my_portfolio_webside.git
+```
 
-## Contact
-- Name: Mo Sokara
-- Email: mosokara2007@gmail.com
-- Phone: +20 01023827379
-- Address: Sherbin, Dakahlia, Egypt
-- GitHub: [MoSokara](https://github.com/MoSokara)
-- Facebook: [Mo Sokara](https://www.facebook.com/mosokara01)
-- LinkedIn: [Mo Sokara](www.linkedin.com/in/mosokara)
-- Twitter: [@MoSokara](https://x.com/mosokara01)
-- Instagram: [@MoSokara](https://www.instagram.com/mosokara01)
-> Feel free to reach out to me for any inquiries, collaborations, or feedback regarding my web development projects.
-> Thank you for visiting my repository!
+2. Open `index.html` in a modern browser.
 
-## License
-This repository is licensed under the MIT License. See the LICENSE file for more information.
+No build step or package manager required — purely static files.
+
+## 🧭 How Projects Are Organized
+
+- `projects/designs/` — UI components and mockups (cards, loaders, pages)
+- `projects/applications/` — small browser apps (calculator, converters)
+- `projects/templates/` — multi-page template demos
+
+Each project folder typically contains its own `index.html`, `styles.css`, and any assets.
+
+## 🙋 Contact
+
+- **Name:** Mohamed Sokara
+- **Email:** mosokara2007@gmail.com
+- **Phone:** +20 01023827379
+- **GitHub:** https://github.com/MoSokara
+- **LinkedIn:** https://www.linkedin.com/in/mosokara
+
+Feel free to open issues, suggest improvements, or request collaborations.
+
+## ✨ Credits
+
+This collection was built for learning and portfolio purposes. Some templates and tutorials were inspired by online courses and community resources.
+
+## 📄 License
+
+This repository is available under the MIT License.

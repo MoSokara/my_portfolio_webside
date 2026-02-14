@@ -388,6 +388,13 @@ main {
     transition: 0.2s;
 }
 
+.project-card i {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
 .project-card:hover {
     transform: scale(1.02);
     border-color: var(--accent-hover);

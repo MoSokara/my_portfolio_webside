@@ -1,5 +1,3 @@
-/* =============================== Sokara Brand Identity - Modern UI ================================= */
-
 :root {
 
     /* Text */
@@ -21,16 +19,14 @@
     --shadow: rgba(0, 0, 0, 0.45);
 }
 
-/* =============================== Reset ================================= */
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =============================== Body ================================= */
-
+/* Body */
 body {
     font-family: 'Cairo', Tahoma, sans-serif;
     background: radial-gradient(circle at top left, #1A0A0A, var(--bg-main));
@@ -40,14 +36,14 @@ body {
     min-height: 100vh;
 }
 
-/* =============================== Scrollbar ================================= */
-
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--bg-soft);
+    border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -59,8 +55,7 @@ body {
     background: var(--accent-hover);
 }
 
-/* =============================== Layout ================================= */
-
+/* Layout */
 .container {
     max-width: 1200px;
     margin: auto;
@@ -68,21 +63,23 @@ body {
 }
 
 .content {
+    width: 500px;
+    max-width: 100%;
     background: linear-gradient(145deg, var(--bg-section), #1a1010);
-    padding: 60px;
+    padding: 30px;
     border-radius: 25px;
     box-shadow: 0 30px 60px var(--shadow);
     border: 1px solid rgba(199, 92, 42, 0.1);
     backdrop-filter: blur(10px);
 }
 
-/* =============================== Top Bar ================================= */
-
+/* Top Bar */
 .top-bar {
     display: flex;
     align-items: center;
     gap: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    padding: 0 10px;
     z-index: 10;
 }
 
@@ -112,7 +109,7 @@ body {
 
 /* Hover Effects */
 .back-btn:hover {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: var(--accent-hover);
     color: #fff;
     box-shadow: 0 12px 30px rgba(199, 92, 42, 0.45);
 }
@@ -143,11 +140,10 @@ body {
     transform: translateX(-50%) scale(1);
 }
 
-/* =============================== Content ================================= */
-
+/* Content */
 h1 {
     font-size: 42px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
+    background: var(--accent);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -155,14 +151,19 @@ h1 {
 
 .subtitle {
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 17px;
+    text-align: center;
 }
 
 ul {
     list-style: none;
     display: grid;
     gap: 18px;
+    overflow-y: auto;
+    max-height: 500px;
+    width: 100%;
+    padding: 10px;
 }
 
 ul a {
@@ -183,18 +184,17 @@ ul a {
 
 /* Hover Effect */
 ul a:hover {
-    transform: translateX(8px);
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border: 1px solid var(--accent);
-    box-shadow: 0 15px 30px rgba(199, 92, 42, 0.4);
+    box-shadow: 0 5px 10px rgba(199, 92, 42, 0.4);
+    transform: scale(1.02);
+    background: var(--accent-hover);
+    border: 1px solid var(--accent-hover);
 }
 
-/* =============================== Responsive ================================= */
-
+/* Responsive (Mobile) */
 @media (max-width: 768px) {
 
     .content {
-        padding: 40px 25px;
+        width: 100%;
     }
 
     h1 {
