@@ -9,11 +9,8 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <!-- <link rel="icon" href="assets/logo.svg" type="image/x-icon" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -68,7 +65,7 @@
                   href="https://www.linkedin.com/in/mosokara"
                   title="LinkedIn"
                   target="_blank"
-                  ><i class="bx bxl-linkedin"></i
+                  ><i class="fa-brands fab fa-linkedin-in"></i
                 ></a>
                 <a
                   class="contact-item"
@@ -93,6 +90,7 @@
               class="section-image"
               src="assets/My-Photo.jpg"
               alt="My Hero Photo"
+              loading="lazy"
             />
           </div>
         </div>
@@ -139,21 +137,303 @@
       <section class="projects" id="projects">
         <div class="container">
           <h2 class="section-header">Projects</h2>
-          <div class="project-list">
-            <a class="project-card" href="projects/designs/designs.html"
-              ><i class="fa-solid fa-object-group"></i> Designs</a
-            >
-            <a
-              class="project-card"
-              href="projects/applications/applications.html"
-              ><i class="fa-solid fa-window-restore"></i> Applications</a
-            >
-            <a class="project-card" href="projects/games/games.html"
-              ><i class="fa-solid fa-gamepad"></i> Games</a
-            >
-            <a class="project-card" href="projects/templates/templates.html"
-              ><i class="fa-solid fa-folder-tree"></i> Templates</a
-            >
+          <div class="filter">
+            <button id="all-filter" class="filter-btn">All</button>
+            <button id="designs-filter" class="filter-btn">Designs</button>
+            <button id="games-filter" class="filter-btn">Games</button>
+            <button id="Apps-filter" class="filter-btn">Applications</button>
+            <button id="templates-filter" class="filter-btn">Templates</button>
+          </div>
+          <div id="project-list" class="project-list">
+            <!-- Games -->
+            <div class="project-card games" data-type="games">
+              <i class="fa-solid fa-gamepad"></i>
+              <img
+                src="assets/project-photos/guess-a-number-game-r.png"
+                alt="guess the number game photo"
+                loading="lazy"
+              />
+              <h2>Guess The Number Game</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/games/guess-a-number-game/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <!-- Templates -->
+            <div class="project-card templates">
+              <i class="fa-solid fa-folder-tree"></i>
+              <img
+                src="assets/project-photos/Html-And-CSS-Template-four.png"
+                alt="Html And CSS Template four photo"
+                loading="lazy"
+              />
+              <h2>Html And CSS Template 4</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/templates/Html-And-CSS-Template-4/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card templates">
+              <i class="fa-solid fa-folder-tree"></i>
+              <img
+                src="assets/project-photos/Html-And-CSS-Template-three.png"
+                alt="Html And CSS Template three photo"
+                loading="lazy"
+              />
+              <h2>Html And CSS Template 3</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/templates/Html-And-CSS-Template-3/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card templates">
+              <i class="fa-solid fa-folder-tree"></i>
+              <img
+                src="assets/project-photos/Html-And-CSS-Template-two.png"
+                alt="Html And CSS Template two photo"
+                loading="lazy"
+              />
+              <h2>Html And CSS Template 2</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/templates/Html-And-CSS-Template-2/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card templates">
+              <i class="fa-solid fa-folder-tree"></i>
+              <img
+                src="assets/project-photos/Html-And-CSS-Template-one.png"
+                alt="Html And CSS Template one photo"
+                loading="lazy"
+              />
+              <h2>Html And CSS Template 1</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/templates/Html-And-CSS-Template-1/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card templates">
+              <i class="fa-solid fa-folder-tree"></i>
+              <img
+                src="assets/project-photos/YTDown-Template.png"
+                alt="YTDown Template photo"
+                loading="lazy"
+              />
+              <h2>YTDown Template</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/templates/YTDown-Template/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <!-- Applictions -->
+            <div class="project-card apps">
+              <i class="fa-solid fa-window-restore"></i>
+              <img
+                src="assets/project-photos/calculator.png"
+                alt="calculator ui photo"
+                loading="lazy"
+              />
+              <h2>Calculator UI</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/applications/calculator/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card apps">
+              <i class="fa-solid fa-window-restore"></i>
+              <img
+                src="assets/project-photos/coin-converter.png"
+                alt="coin converter photo"
+                loading="lazy"
+              />
+              <h2>Coin Converter</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/applications/coin-converter/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card apps">
+              <i class="fa-solid fa-window-restore"></i>
+              <img
+                src="assets/project-photos/todo-list.png"
+                alt="to-do list photo"
+                loading="lazy"
+              />
+              <h2>To-Do List</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/applications/todo-list/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <!-- Designs -->
+            <div class="project-card designs">
+              <i class="fa-solid fa-object-group"></i>
+              <img
+                src="assets/project-photos/blog-preview-card.png"
+                alt="blog preview card photo"
+                loading="lazy"
+              />
+              <h2>Blog Preview Card</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/designs/cards/blog-preview-card/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card designs">
+              <i class="fa-solid fa-object-group"></i>
+              <img
+                src="assets/project-photos/business-card.png"
+                alt="business card photo"
+                loading="lazy"
+              />
+              <h2>Business Card</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/designs/cards/business-card/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card designs">
+              <i class="fa-solid fa-object-group"></i>
+              <img
+                src="assets/project-photos/qr-code-component.png"
+                alt="qr code component photo"
+                loading="lazy"
+              />
+              <h2>QR Code Component</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/designs/cards/qr-code-component/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card designs">
+              <i class="fa-solid fa-object-group"></i>
+              <img
+                src="assets/project-photos/registration-form.png"
+                alt="registration form photo"
+                loading="lazy"
+              />
+              <h2>Registration Form</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/designs/forms/registration-form/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card designs">
+              <i class="fa-solid fa-object-group"></i>
+              <img
+                src="assets/project-photos/survey-form.png"
+                alt="survey form photo"
+                loading="lazy"
+              />
+              <h2>Survey Form</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/designs/forms/survey-form/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
+            <div class="project-card designs">
+              <i class="fa-solid fa-object-group"></i>
+              <img
+                src="assets/project-photos/login-page.png"
+                alt="login page photo"
+                loading="lazy"
+              />
+              <h2>Login Page</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis, aut!
+              </p>
+              <a
+                href="projects/designs/pages/login-page/index.html"
+                class="live-demo-btn"
+                target="_blank"
+                >Live Demo</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -212,9 +492,6 @@
     </main>
 
     <footer>&copy; 2025 Mohamed Sokara. All rights reserved.</footer>
-    <script
-      src="https://kit.fontawesome.com/43312d5f8f.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="script.js"></script>
   </body>
 </html>

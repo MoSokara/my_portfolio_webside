@@ -40,11 +40,6 @@ hr {
     transition: 0.3s;
 }
 
-.business-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-}
-
 .profile-image {
     max-width: 100%;
     border-radius: 10px;
