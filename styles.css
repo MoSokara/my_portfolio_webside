@@ -82,6 +82,9 @@ ul {
 header {
     box-shadow: 0 4px 24px var(--shadow);
     background: var(--bg-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
@@ -411,76 +414,118 @@ main {
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 }
+
+@media screen and (max-width: 767px) {
+    .project-list {
+        grid-template-columns: minmax(200px, 1fr);
+    }
+}
+
+/* PROJECT PREVIEW */
+
+.project-preview {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    height: fit-content;
+}
+
+.project-preview img {
+    width: 100%;
+    transition: .3s;
+}
+
+.project-card:hover iframe {
+    transform: scale(.9);
+}
+
+/* PROJECT CARD */
 
 .project-card {
-    width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding: 1rem;
-    background-color: var(--bg-soft);
-    box-shadow: 0 2px 8px var(--shadow);
-    border-radius: 1rem;
-    border: 0.1rem solid var(--accent);
-    position: relative;
+    background: var(--bg-soft);
+    border-radius: 12px;
     overflow: hidden;
-    transition: 0.2s;
+    transition: .3s;
+    box-shadow: 0 10px 25px var(--shadow);
+    border: 2px solid var(--accent);
 }
 
-.project-card i {
-    flex: 1;
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    width: 70px;
-    height: 70px;
-    background: var(--accent);
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--text-primary);
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+/* INFO */
+
+.project-info {
+    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.project-card img {
-    width: 100%;
-    border-radius: 0.8rem;
-}
-
-.project-card h2 {
+.project-info h3 {
     color: var(--text-primary);
     font-size: 1.2rem;
 }
 
-.project-card p {
+.project-info p {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: .9rem;
     line-height: 1.5;
 }
 
-.live-demo-btn {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    display: block;
-    margin-top: auto;
-    margin-right: auto;
-    padding: 10px 20px;
-    background-color: var(--bg-soft);
-    box-shadow: 0 2px 8px var(--shadow);
-    border-radius: 1rem;
-    border: 0.1rem solid var(--accent);
-    transition: 0.2s;
+/* TECH STACK */
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
-.live-demo-btn:hover {
-    border-color: var(--accent-hover);
-    background-color: var(--accent-hover);
-    box-shadow: 0 5px 10px var(--shadow);
+.tech span {
+    background: #222;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--accent);
+}
+
+/* BUTTONS */
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.live-btn {
+    background: var(--accent);
+    color: white;
+}
+
+.github-btn {
+    background: #333;
+    color: white;
+}
+
+.live-btn:hover {
+    background: var(--accent-hover);
+}
+
+.github-btn:hover {
+    background: #555;
 }
 
 /* ------ Contact Section ------ */

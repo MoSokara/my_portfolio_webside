@@ -1,50 +1,27 @@
-const allFilterBtn = document.getElementById("all-filter");
-const designsFilterBtn = document.getElementById("designs-filter");
-const gamesFilterBtn = document.getElementById("games-filter");
-const AppsFilterBtn = document.getElementById("Apps-filter");
-const templatesFilterBtn = document.getElementById("templates-filter");
-const projectList = document.getElementById("project-list");
-const projectCards = document.querySelectorAll(".project-card");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".project-card");
 
-allFilterBtn.addEventListener("click", () => {
-    projectList.innerHTML = "";
-    for (let i = 0; i < projectCards.length; i++) {
-        projectList.appendChild(projectCards[i]);
-    }
-})
+filterButtons.forEach(button => {
 
-gamesFilterBtn.addEventListener("click", () => {
-    projectList.innerHTML = "";
-    for (let i = 0; i < projectCards.length; i++) {
-        if (projectCards[i].className == "project-card games") {
-            projectList.appendChild(projectCards[i]);
-        }
-    }
-})
+button.addEventListener("click", () => {
 
-designsFilterBtn.addEventListener("click", () => {
-    projectList.innerHTML = "";
-    for (let i = 0; i < projectCards.length; i++) {
-        if (projectCards[i].className == "project-card designs") {
-            projectList.appendChild(projectCards[i]);
-        }
-    }
-})
+const filter = button.id.replace("-filter","");
 
-AppsFilterBtn.addEventListener("click", () => {
-    projectList.innerHTML = "";
-    for (let i = 0; i < projectCards.length; i++) {
-        if (projectCards[i].className == "project-card apps") {
-            projectList.appendChild(projectCards[i]);
-        }
-    }
-})
+cards.forEach(card => {
 
-templatesFilterBtn.addEventListener("click", () => {
-    projectList.innerHTML = "";
-    for (let i = 0; i < projectCards.length; i++) {
-        if (projectCards[i].className == "project-card templates") {
-            projectList.appendChild(projectCards[i]);
-        }
-    }
-})
+if(filter === "all"){
+card.style.display="flex";
+return;
+}
+
+if(card.dataset.type === filter){
+card.style.display="flex";
+}else{
+card.style.display="none";
+}
+
+});
+
+});
+
+});
