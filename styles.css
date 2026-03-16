@@ -224,13 +224,18 @@ main {
     margin-bottom: -40px;
 }
 
-.name {
+.welcome h1 {
     font-size: 4rem;
-    font-weight: bold;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.name {
     color: var(--accent);
 }
 
 .job-title {
+    display: block;
     font-size: 1.5rem;
     color: var(--text-primary);
     text-decoration: underline;
