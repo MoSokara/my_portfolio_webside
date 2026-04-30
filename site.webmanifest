@@ -1,0 +1,21 @@
+{
+  "name": "Sokara Portfolio",
+  "short_name": "Sokara",
+  "description": "Frontend developer portfolio for Mohamed Sokara.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080a0f",
+  "theme_color": "#080a0f",
+  "icons": [
+    {
+      "src": "assets/favicons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

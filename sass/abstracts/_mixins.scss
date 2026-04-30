@@ -1,0 +1,30 @@
+@use "variables" as *;
+
+// Breakpoint helper keeps media queries consistent across modules.
+@mixin media-down($key) {
+  @media (max-width: map-get($breakpoints, $key)) {
+    @content;
+  }
+}
+
+// Shared surface treatment for cards and elevated UI blocks.
+@mixin card-shell {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+// Consistent hover lift for interactive cards.
+@mixin interactive-lift {
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+
+  &:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-4px);
+  }
+}

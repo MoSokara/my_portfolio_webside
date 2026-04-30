@@ -2,37 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- Primary Meta Tags -->
-    <title>Sokara – Frontend Web Developer | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Search, sharing, and browser UI metadata. -->
+    <title>Sokara - Frontend Web Developer | Portfolio</title>
     <meta name="title" content="Sokara | Frontend Developer Portfolio" />
     <meta
       name="description"
-      content="Sokara is a frontend web developer specializing in HTML, CSS, and JavaScript. Explore modern web projects, templates, applications, and interactive games built by Sokara."
+      content="Portfolio of Mohamed Sokara, a frontend web developer building responsive websites, modern interfaces, web apps, and interactive JavaScript projects."
     />
-
-    <meta name="author" content="Sokara" />
+    <meta
+      name="keywords"
+      content="Mohamed Sokara, Sokara, frontend developer, portfolio, HTML, CSS, JavaScript, Sass, React, responsive web design"
+    />
+    <meta name="author" content="Mohamed Sokara" />
     <meta name="robots" content="index, follow" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a0f" />
+    <meta name="color-scheme" content="dark light" />
 
     <link rel="canonical" href="https://mosokara.netlify.app/" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://mosokara.netlify.app/" />
     <meta property="og:title" content="Sokara | Frontend Developer Portfolio" />
     <meta
       property="og:description"
-      content="Explore projects, templates, and web applications built by Sokara using modern web technologies."
+      content="Explore responsive templates, JavaScript applications, and polished frontend projects by Mohamed Sokara."
     />
     <meta
       property="og:image"
       content="https://mosokara.netlify.app/assets/imgs/guess-a-number-game-r.png"
     />
+    <meta
+      property="og:image:alt"
+      content="Preview of a JavaScript project from Mohamed Sokara's portfolio"
+    />
     <meta property="og:site_name" content="Sokara Portfolio" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://mosokara.netlify.app/" />
     <meta
@@ -41,15 +48,48 @@
     />
     <meta
       property="twitter:description"
-      content="Official portfolio of Sokara, showcasing web development projects and applications."
+      content="Official portfolio of Mohamed Sokara, showcasing frontend projects, applications, and interface work."
     />
     <meta
       property="twitter:image"
       content="https://mosokara.netlify.app/assets/imgs/guess-a-number-game-r.png"
     />
 
-    <!-- Favicon -->
-    <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
+    <!-- Custom MS favicon set for browsers, pinned tabs, and mobile homescreens. -->
+    <link rel="icon" href="assets/favicons/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="assets/favicons/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="assets/favicons/favicon-180x180.png"
+      sizes="180x180"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" as="image" href="assets/My-Photo.jpeg" />
+    <link rel="preload" as="image" href="assets/hero-bg.svg" />
+
+    <!-- Apply the saved color mode before CSS paints to avoid theme flicker. -->
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const preferredTheme = window.matchMedia(
+          "(prefers-color-scheme: light)",
+        ).matches
+          ? "light"
+          : "dark";
+        document.documentElement.dataset.theme =
+          savedTheme === "light" || savedTheme === "dark"
+            ? savedTheme
+            : preferredTheme;
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
 
     <script type="application/ld+json">
       {
@@ -70,579 +110,998 @@
           "HTML",
           "CSS",
           "JavaScript",
-          "Frontend Development",
-          "Web Development"
+          "Sass",
+          "React",
+          "Responsive Web Design",
+          "Frontend Development"
         ]
       }
     </script>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="assets/css/all.min.css" />
+
+    <link rel="stylesheet" href="sass/main.css" />
+    <link
+      rel="stylesheet"
+      href="packages/fontawesome-free-7.2.0-web/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300..1000&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <header>
-      <div class="container">
-        <a class="name-header" href="#home"><b>Sokara</b></a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-        <nav>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <!-- Header: persistent navigation, theme toggle, and mobile menu control. -->
+    <header class="site-header">
+      <nav class="site-nav container" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Sokara home">
+          <span class="brand__mark" aria-hidden="true">S</span>
+          <span>Sokara</span>
+        </a>
 
-            <!-- Coming soon... -->
-            <!-- Resume -->
-            <!-- Skills -->
-            <!-- Services -->
-            <!-- Blog -->
-          </ul>
-        </nav>
-      </div>
+        <ul id="primary-navigation" class="nav-list" data-nav-list>
+          <li><a href="#home" data-nav-link>Home</a></li>
+          <li><a href="#about" data-nav-link>About</a></li>
+          <li><a href="#services" data-nav-link>Services</a></li>
+          <li><a href="#skills" data-nav-link>Skills</a></li>
+          <li><a href="#projects" data-nav-link>Projects</a></li>
+          <li><a href="#contact" data-nav-link>Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch theme"
+            data-theme-toggle
+          >
+            <i class="fa-solid fa-moon" aria-hidden="true" data-theme-icon></i>
+          </button>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+            data-nav-toggle
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true" data-nav-icon></i>
+          </button>
+        </div>
+      </nav>
     </header>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="hero" id="home">
+    <main id="main-content">
+      <!-- Hero: primary value proposition, CTAs, profile image, and credibility metrics. -->
+      <section id="home" class="hero" aria-labelledby="hero-title" data-section>
         <div class="container">
-          <div class="welcome">
-            <div>
-              <span>Hi There!</span>
-              <h1>
-                I'm <span class="name">Sokara</span
-                ><span class="job-title">Frontend Web Developer</span>
-              </h1>
-            </div>
+          <div class="hero__layout">
+            <div class="hero__content" data-reveal>
+              <p class="eyebrow">Available for frontend opportunities</p>
+              <h1 id="hero-title">Mohamed Sokara</h1>
+              <p class="hero__role">Frontend Web Developer</p>
+              <p class="hero__lead">
+                I build fast, responsive, and accessible web interfaces with a
+                focus on clean structure, polished interactions, and
+                maintainable code.
+              </p>
 
-            <p class="description">
-              Frontend developer specializing in building responsive and
-              interactive web applications using HTML, CSS, and JavaScript. I
-              focus on performance, clean UI design, and creating seamless user
-              experiences on modern websites.
-            </p>
-            <div class="actions">
-              <a href="#contact">Contact Me</a>
-              <a href="assets/Mohamed Sokara - CV.pdf" download>Download CV</a>
-              <div class="links">
+              <div class="hero__actions" aria-label="Primary actions">
+                <a class="btn btn--primary" href="#contact">
+                  Hire Me
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn--secondary" href="#projects">
+                  View Projects
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
                 <a
-                  class="contact-item"
-                  href="https://www.linkedin.com/in/mosokara"
-                  title="LinkedIn"
+                  class="btn btn--ghost"
+                  href="assets/Mohamed Sokara - CV.pdf"
                   target="_blank"
-                  ><i class="fa-brands fab fa-linkedin-in"></i
-                ></a>
-                <a
-                  class="contact-item"
-                  href="https://www.facebook.com/profile.php?id=100076059795902"
-                  title="Facebook"
-                  target="_blank"
-                  ><i class="fa-brands fa-facebook-f"></i
-                ></a>
-                <a
-                  class="contact-item"
-                  href="https://github.com/MoSokara"
-                  title="GitHub"
-                  target="_blank"
-                  ><i class="fa-brands fa-github"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="image">
-            <img
-              class="section-image"
-              src="assets/My-Photo.jpeg"
-              alt="Sokara Profile Photo"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section class="about" id="about">
-        <div class="container">
-          <div class="info">
-            <h2 class="section-header">About Me</h2>
-            <p class="description">
-              Hello! I'm Mohamed Sokara, a MERN Stack Developer from Egypt and a
-              Computer Science student at the Faculty of Computers and
-              Information, Menoufia University. I build scalable full-stack web
-              applications using MongoDB, Express.js, React, and Node.js, with a
-              strong foundation in core web technologies and software
-              engineering principles. I’m passionate about problem-solving,
-              clean architecture, and continuously expanding my knowledge across
-              different areas of the software industry.
-            </p>
-            <div class="information">
-              <div class="information-name">
-                <p>Name</p>
-                <p>Age</p>
-                <p>Address</p>
-                <p>Phone</p>
-                <p>Email</p>
-              </div>
-              <div class="information-content">
-                <p>: Mohamed Abdo Sokara</p>
-                <p>: 18 year</p>
-                <p>: Shirbin - Dakahlia - Egypt</p>
-                <a href="tel:+201023827379">: +20 01023827379</a>
-                <a href="mailto:mosokara2007@gmail.com"
-                  >: mosokara2007@gmail.com</a
+                  rel="noreferrer"
                 >
+                  Resume
+                  <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                </a>
+              </div>
+
+              <dl class="hero__metrics" aria-label="Portfolio highlights">
+                <div class="metric-card">
+                  <dt>9+</dt>
+                  <dd>Featured projects</dd>
+                </div>
+                <div class="metric-card">
+                  <dt>3</dt>
+                  <dd>Project categories</dd>
+                </div>
+                <div class="metric-card">
+                  <dt>100%</dt>
+                  <dd>Responsive focus</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="hero__visual" data-reveal>
+              <div class="hero__image-shell">
+                <img
+                  src="assets/My-Photo.jpeg"
+                  alt="Mohamed Sokara, frontend web developer"
+                  width="640"
+                  height="760"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </div>
+              <div class="hero__badge">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Freelance-ready frontend
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
-      <section class="projects" id="projects">
+      <!-- About: concise personal positioning with quick credibility facts. -->
+      <section
+        id="about"
+        class="section section--surface"
+        aria-labelledby="about-title"
+        data-section
+      >
         <div class="container">
-          <h2 class="section-header">Projects</h2>
-          <div class="filter">
-            <button id="all-filter" class="filter-btn">All</button>
-            <button id="designs-filter" class="filter-btn">Designs</button>
-            <button id="games-filter" class="filter-btn">Games</button>
-            <button id="apps-filter" class="filter-btn">Applications</button>
-            <button id="templates-filter" class="filter-btn">Templates</button>
+          <div class="section-heading">
+            <p class="eyebrow">Profile</p>
+            <h2 id="about-title" class="section-title">About Me</h2>
+            <p class="section-copy">
+              A frontend developer who cares about how an interface feels, how
+              it is structured, and how reliably it works across screens.
+            </p>
           </div>
+
+          <div class="about__grid">
+            <div class="about__copy surface">
+              <p>
+                I'm Mohamed Sokara, <span id="about-age"></span> years old, and
+                I study computer science at
+                <a href="https://www.menofia.edu.eg/fci/"
+                  >El-Menofia University, Egypt</a
+                >.
+              </p>
+              <p>
+                My work focuses on HTML, CSS, Sass, JavaScript, and React. I
+                enjoy turning ideas into responsive layouts, reusable UI
+                systems, and interactive browser experiences that stay clear and
+                maintainable.
+              </p>
+              <p>
+                I am building a portfolio around practical projects, strong
+                visual hierarchy, accessibility, and the kind of code that is
+                easy to improve over time.
+              </p>
+            </div>
+
+            <div class="about__facts" aria-label="Quick facts">
+              <article class="fact-card">
+                <strong>Egypt</strong>
+                <span>Based in Daqahlia</span>
+              </article>
+              <article class="fact-card">
+                <strong>Frontend</strong>
+                <span>HTML, CSS, Sass, JavaScript, React</span>
+              </article>
+              <article class="fact-card">
+                <strong>Design-aware</strong>
+                <span>Responsive systems, accessibility, and UI polish</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services: freelance-focused offers for clients and hiring teams. -->
+      <section
+        id="services"
+        class="section"
+        aria-labelledby="services-title"
+        data-section
+      >
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title" class="section-title">
+              Frontend work with structure and taste
+            </h2>
+            <p class="section-copy">
+              I build the visible parts of websites with careful markup,
+              scalable styling, and interactions that support the user flow.
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="service-card" data-reveal>
+              <span class="card-icon" aria-hidden="true">
+                <i class="fa-solid fa-code"></i>
+              </span>
+              <h3>Frontend Development</h3>
+              <p>
+                Responsive pages and interfaces built with semantic HTML, modern
+                CSS, Sass, and vanilla JavaScript.
+              </p>
+            </article>
+
+            <article class="service-card" data-reveal>
+              <span class="card-icon" aria-hidden="true">
+                <i class="fa-solid fa-pen-ruler"></i>
+              </span>
+              <h3>UI Implementation</h3>
+              <p>
+                Clean conversion from designs or references into reusable,
+                accessible interface components.
+              </p>
+            </article>
+
+            <article class="service-card" data-reveal>
+              <span class="card-icon" aria-hidden="true">
+                <i class="fa-solid fa-gauge-high"></i>
+              </span>
+              <h3>Performance Polish</h3>
+              <p>
+                Layout, image, interaction, and accessibility improvements that
+                make static sites feel faster and more professional.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills: frontend toolkit presented as compact capability cards. -->
+      <section
+        id="skills"
+        class="section section--surface"
+        aria-labelledby="skills-title"
+        data-section
+      >
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Stack</p>
+            <h2 id="skills-title" class="section-title">Skills</h2>
+            <p class="section-copy">
+              A focused frontend toolkit for building modern, responsive, and
+              maintainable web experiences.
+            </p>
+          </div>
+
+          <div class="skill-grid" aria-label="Frontend skills">
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-html5" aria-hidden="true"></i>
+              <span>
+                <strong>HTML5</strong>
+                <small>Semantic structure</small>
+              </span>
+            </span>
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+              <span>
+                <strong>CSS3</strong>
+                <small>Responsive layouts</small>
+              </span>
+            </span>
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-sass" aria-hidden="true"></i>
+              <span>
+                <strong>Sass</strong>
+                <small>Modular styling</small>
+              </span>
+            </span>
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-js" aria-hidden="true"></i>
+              <span>
+                <strong>JavaScript</strong>
+                <small>Interactions</small>
+              </span>
+            </span>
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-react" aria-hidden="true"></i>
+              <span>
+                <strong>React</strong>
+                <small>Component UI</small>
+              </span>
+            </span>
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-bootstrap" aria-hidden="true"></i>
+              <span>
+                <strong>Bootstrap</strong>
+                <small>UI foundations</small>
+              </span>
+            </span>
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-npm" aria-hidden="true"></i>
+              <span>
+                <strong>NPM</strong>
+                <small>Tooling basics</small>
+              </span>
+            </span>
+            <span class="skill-pill" data-reveal>
+              <i class="fa-brands fa-git-alt" aria-hidden="true"></i>
+              <span>
+                <strong>Git</strong>
+                <small>Version control</small>
+              </span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA: conversion-focused prompt before the detailed resume and project grid. -->
+      <section
+        id="cta"
+        class="section section--compact cta"
+        aria-labelledby="cta-title"
+        data-section
+      >
+        <div class="container">
+          <div class="cta__panel surface" data-reveal>
+            <div>
+              <p class="eyebrow">Need a clean frontend?</p>
+              <h2 id="cta-title" class="section-title">
+                I can help turn your idea into a responsive, polished website.
+              </h2>
+              <p class="section-copy">
+                From landing pages to portfolio refreshes and UI implementation,
+                I focus on clear structure, strong presentation, and smooth
+                handoff-ready code.
+              </p>
+            </div>
+
+            <div class="cta__actions" aria-label="Call to action links">
+              <a class="btn btn--primary" href="#contact">
+                Hire Me
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn--secondary" href="#projects">
+                View Projects
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume: lightweight journey timeline and CV access. -->
+      <section
+        id="resume"
+        class="section"
+        aria-labelledby="resume-title"
+        data-section
+      >
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Resume</p>
+            <h2 id="resume-title" class="section-title">
+              Learning by shipping
+            </h2>
+            <p class="section-copy">
+              My current path combines computer science study, practical
+              frontend projects, and steady improvement through real interfaces.
+            </p>
+            <div class="resume-actions">
+              <a
+                class="btn btn--primary"
+                href="assets/Mohamed Sokara - CV.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View resume
+                <i
+                  class="fa-solid fa-up-right-from-square"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="resume__grid">
+            <article class="timeline-card" data-reveal>
+              <p class="timeline-meta">2023 - Present</p>
+              <h3>Frontend Developer</h3>
+              <p>
+                Building portfolio projects, templates, UI components, and small
+                browser applications with HTML, CSS, Sass, and JavaScript.
+              </p>
+            </article>
+
+            <article class="timeline-card" data-reveal>
+              <p class="timeline-meta">Computer Science</p>
+              <h3>El-Menofia University</h3>
+              <p>
+                Studying core computer science while applying frontend concepts
+                through practical web development projects.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects: filterable portfolio grid with demos and source links. -->
+      <section
+        id="projects"
+        class="section section--surface"
+        aria-labelledby="projects-title"
+        data-section
+      >
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected work</p>
+            <h2 id="projects-title" class="section-title">Projects</h2>
+            <p class="section-copy">
+              A curated set of interfaces, applications, games, and templates
+              that show responsive layout, JavaScript interaction, and visual
+              execution.
+            </p>
+          </div>
+
+          <div class="project-toolbar" aria-label="Project filters">
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="designs"
+              aria-pressed="false"
+            >
+              Designs
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="games"
+              aria-pressed="false"
+            >
+              Games
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="apps"
+              aria-pressed="false"
+            >
+              Applications
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="templates"
+              aria-pressed="false"
+            >
+              Templates
+            </button>
+          </div>
+
           <div id="project-list" class="project-list">
-            <!-- (Calculator) -->
-            <div class="project-card" data-type="apps">
-              <div class="project-preview">
+            <article class="project-card" data-category="apps" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/calculator.png"
-                  alt="Calculator UI Photo"
+                  alt="Calculator app interface"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
-                <h3>Calculator</h3>
-
+              <div class="project-card__body">
+                <h3>Calculator App</h3>
                 <p>
-                  A responsive calculator built with JavaScript supporting basic
-                  arithmetic operations.
+                  A responsive JavaScript calculator supporting basic arithmetic
+                  operations with a clean interface.
                 </p>
-
-                <div class="tech">
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                   <span>JavaScript</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/calculator/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open Calculator App live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/calculator.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open Calculator App GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (Guess Game) -->
-            <div class="project-card" data-type="games">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="games" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/guess-a-number-game-r.png"
-                  alt="Guess Game Photo"
+                  alt="Guess the Number game interface"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>Guess The Number Game</h3>
-
                 <p>
-                  A fun JavaScript game where players try to guess the hidden
-                  number with hints and score tracking.
+                  A browser game where players guess a hidden number with hints,
+                  score feedback, and replay flow.
                 </p>
-
-                <div class="tech">
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                   <span>JavaScript</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/guess-a-number-game/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open Guess The Number Game live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/guess-a-number-game.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open Guess The Number Game GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (Template 4) -->
-            <div class="project-card" data-type="templates">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="templates" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/Html-And-CSS-Template-four.png"
-                  alt="Html CSS Template responsive website 4 Photo"
+                  alt="Responsive dashboard template preview"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>HTML & CSS Template 4</h3>
-
                 <p>
-                  A polished modern dashboard with advanced responsive design.
+                  A polished dashboard template with responsive layout,
+                  organized sections, and clear information hierarchy.
                 </p>
-
-                <div class="tech">
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/Html_And_CSS_Template_four/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 4 live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/Html_And_CSS_Template_four.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 4 GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (Template 3) -->
-            <div class="project-card" data-type="templates">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="templates" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/Html-And-CSS-Template-three.png"
-                  alt="Html CSS Template responsive website 3 Photo"
+                  alt="Responsive multi-section template preview"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>HTML & CSS Template 3</h3>
-
                 <p>
-                  A clean multi-section responsive template with organized UI
-                  components.
+                  A clean multi-section template with responsive cards,
+                  navigation, and reusable content blocks.
                 </p>
-
-                <div class="tech">
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/Html_And_CSS_Template_three/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 3 live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/Html_And_CSS_Template_three.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 3 GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (Template 2) -->
-            <div class="project-card" data-type="templates">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="templates" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/Html-And-CSS-Template-two.png"
-                  alt="Html CSS Template responsive website 2 Photo"
+                  alt="Modern responsive layout template preview"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>HTML & CSS Template 2</h3>
-
                 <p>
-                  A modern responsive layout with improved structure and
-                  reusable sections.
+                  A modern responsive layout with reusable sections and clear
+                  spacing for content-heavy pages.
                 </p>
-
-                <div class="tech">
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/Html_And_CSS_Template_two/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 2 live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/Html_And_CSS_Template_two.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 2 GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (Template 1) -->
-            <div class="project-card" data-type="templates">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="templates" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/Html-And-CSS-Template-one.png"
-                  alt="Html CSS Template responsive website 1 Photo"
+                  alt="Introductory HTML and CSS template preview"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>HTML & CSS Template 1</h3>
-
                 <p>
-                  A beginner-friendly responsive layout built with pure HTML and
-                  CSS.
+                  A foundational responsive template built with clean HTML and
+                  CSS structure.
                 </p>
-
-                <div class="tech">
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/Html_And_CSS_Template_one/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 1 live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/Html_And_CSS_Template_one.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open HTML and CSS Template 1 GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (Blog Preview Card) -->
-            <div class="project-card" data-type="designs">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="designs" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/blog-preview-card.png"
-                  alt="Blog Preview Card Photo"
+                  alt="Blog preview card component"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>Blog Preview Card</h3>
-
-                <p>A clean blog card component with minimal design.</p>
-
-                <div class="tech">
+                <p>
+                  A compact article card component focused on spacing,
+                  typography, and clear visual grouping.
+                </p>
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/blog_preview_card/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open Blog Preview Card live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/blog_preview_card.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open Blog Preview Card GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (QR Code Component) -->
-            <div class="project-card" data-type="designs">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="designs" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/qr-code-component.png"
-                  alt="QR Code Component Photo"
+                  alt="QR code component preview"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>QR Code Component</h3>
-
-                <p>A simple and responsive QR code card design.</p>
-
-                <div class="tech">
+                <p>
+                  A simple responsive component with centered layout, balanced
+                  card spacing, and readable content.
+                </p>
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/qr_code_component/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open QR Code Component live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/qr_code_component.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open QR Code Component GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
-            <!-- (Business Card) -->
-            <div class="project-card" data-type="designs">
-              <div class="project-preview">
+            </article>
+
+            <article class="project-card" data-category="designs" data-reveal>
+              <div class="project-card__media">
                 <img
                   src="assets/imgs/business-card.png"
-                  alt="Business Card Photo"
+                  alt="Digital business card design"
                   loading="lazy"
                 />
               </div>
-
-              <div class="project-info">
+              <div class="project-card__body">
                 <h3>Business Card</h3>
-
-                <p>A stylish digital business card with modern layout.</p>
-
-                <div class="tech">
+                <p>
+                  A digital business card component with concise content,
+                  profile styling, and responsive spacing.
+                </p>
+                <div class="tech-list" aria-label="Technologies">
                   <span>HTML</span>
                   <span>CSS</span>
                 </div>
-
-                <div class="project-links">
+                <div class="project-card__links">
                   <a
+                    class="btn btn--primary"
                     href="https://mosokara.github.io/business-card/"
                     target="_blank"
-                    class="btn live-btn"
+                    rel="noreferrer"
+                    aria-label="Open Business Card live demo"
                   >
-                    Live Demo
+                    Live demo
                   </a>
-
                   <a
+                    class="btn btn--secondary"
                     href="https://github.com/MoSokara/business-card.git"
                     target="_blank"
-                    class="btn github-btn"
+                    rel="noreferrer"
+                    aria-label="Open Business Card GitHub repository"
                   >
                     GitHub
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section class="contact" id="contact">
+      <!-- Contact: direct contact methods and a mailto-powered project form. -->
+      <section
+        id="contact"
+        class="section"
+        aria-labelledby="contact-title"
+        data-section
+      >
         <div class="container">
-          <h2 class="section-header">Contact</h2>
-          <div class="form">
-            <form action="">
-              <fieldset class="user-information">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title" class="section-title">
+              Let's build something clean
+            </h2>
+            <p class="section-copy">
+              Reach out for frontend work, collaboration, or feedback on a web
+              interface.
+            </p>
+          </div>
+
+          <div class="contact__grid">
+            <div class="contact-methods" aria-label="Contact methods">
+              <a class="contact-card" href="mailto:mosokara2007@gmail.com">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email
+                  <strong>mosokara2007@gmail.com</strong>
+                </span>
+              </a>
+              <a class="contact-card" href="tel:+201023827379">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>
+                  Phone
+                  <strong>+20 102 382 7379</strong>
+                </span>
+              </a>
+              <div class="contact-card">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>
+                  Location
+                  <strong>Daqahlia, Egypt</strong>
+                </span>
+              </div>
+            </div>
+
+            <form
+              id="contact-form"
+              class="contact-form surface"
+              action="mailto:mosokara2007@gmail.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="form-field">
+                <label for="name">Name</label>
                 <input
-                  type="text"
-                  name="user-name"
                   id="name"
-                  placeholder="Name"
-                  title="Your name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
                   autocomplete="name"
                   required
                 />
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
                 <input
-                  type="text"
-                  name="user-phone"
-                  id="phone"
-                  placeholder="Phone"
-                  title="Your phone number"
-                  autocomplete="tel"
-                  required
-                />
-                <input
-                  type="email"
-                  name="user-email"
                   id="email"
-                  placeholder="Email"
-                  title="Your email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
                   autocomplete="email"
                   required
                 />
-              </fieldset>
+              </div>
 
-              <textarea
-                name="user-comment"
-                id="comment"
-                rows="10"
-                cols="30"
-                placeholder="Your comment..."
-                title="Your need or what do you want"
-                required
-              ></textarea>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+20 ..."
+                  autocomplete="tel"
+                  inputmode="tel"
+                />
+              </div>
 
-              <input type="submit" name="submit" id="submit" />
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  minlength="10"
+                  required
+                ></textarea>
+              </div>
+
+              <button class="btn btn--primary" type="submit">
+                Send message
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              </button>
+              <p id="form-status" class="form-status" role="status"></p>
             </form>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>&copy; 2025 Mohamed Sokara. All rights reserved.</footer>
+    <!-- Footer: copyright and primary external profile links. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Mohamed Sokara. All rights reserved.
+        </p>
+        <div class="footer-links" aria-label="Social links">
+          <a
+            href="https://github.com/MoSokara"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mosokara"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a href="mailto:mosokara2007@gmail.com"
+            ><i class="fa-solid fa-envelope"></i> Email</a
+          >
+        </div>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

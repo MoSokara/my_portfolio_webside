@@ -1,0 +1,9 @@
+// Non-CSS Sass helpers for responsive utilities and shared font definitions.
+$breakpoints: (
+  "sm": 560px,
+  "md": 900px,
+  "lg": 920px,
+  "xl": 1180px
+);
+
+$font-family-base: "Cairo", Arial, Helvetica, sans-serif;

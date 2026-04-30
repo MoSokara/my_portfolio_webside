@@ -1,51 +1,89 @@
-# 🚀 My Portfolio — Web Development Projects
+# Sokara Portfolio
 
-<p align="center">
-	<img src="https://img.shields.io/badge/HTML5-orange?style=for-the-badge&logo=html5&logoColor=white" />
-	<img src="https://img.shields.io/badge/CSS3-blue?style=for-the-badge&logo=css3&logoColor=white" />
-	<img src="https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=black" />
-	<img src="https://img.shields.io/badge/Portfolio-green?style=for-the-badge" />
-</p>
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111)
+![Responsive](https://img.shields.io/badge/Responsive-22D3EE?style=for-the-badge)
+![Dark Mode](https://img.shields.io/badge/Dark%20Mode-080A0F?style=for-the-badge)
 
----
+Premium frontend developer portfolio for **Mohamed Sokara**, built as a clean, responsive, and accessible static website for freelance clients and job applications.
 
-## 📌 Overview
+The project focuses on strong visual hierarchy, modern startup-style UI, dark/light theme support, polished interactions, and scalable SCSS organization.
 
-This repository contains personal web development projects by **Mohamed (Mo) Sokara**. It showcases static templates, UI designs, small apps, and experiments built primarily with **HTML**, **CSS**, and **vanilla JavaScript**. Many projects are portfolio-ready and intended to demonstrate frontend skills and responsive design techniques.
+## Live Demo
 
-## 🎯 Highlights
+[View Live Portfolio](https://mosokara.netlify.app/)
 
-- Portfolio landing page (`index.html`)
-- Multiple design components (cards, loaders, pages)
-- Small web applications (calculator, coin converter, todo list)
-- Template collections (multi-page template demos)
+## Features
 
-## 🗂️ Repository Structure
+- Modern startup-style portfolio interface
+- Dark mode first with light mode support
+- Theme preference saved with `localStorage`
+- Foreground hero profile image with custom abstract tech background
+- Responsive navigation with Font Awesome menu icon
+- Smooth mobile menu behavior
+- Active section highlight in the navbar
+- Scroll reveal animations with reduced-motion support
+- Filterable project grid
+- Freelance-focused services and CTA sections
+- Resume/CV access
+- Accessible contact form powered by `mailto`
+- Custom MS favicon set with ICO, SVG, and PNG sizes
+- SEO metadata, Open Graph tags, Twitter card tags, and JSON-LD schema
 
-```
-my_portfolio_webside/
-├── index.html                # Portfolio home
-├── styles.css                # Global styles
-├── assets/                   # JS, images, icons
-├── projects/                 # Organized project categories
-│   ├── designs/
-│   ├── applications/
-│   ├── games/
-│   └── templates/
-└── README.md
-```
-
-For full details, explore the `projects/` subfolders.
-
-## 🛠️ Technologies
+## Technologies
 
 - HTML5
-- CSS3 (Flexbox, Grid, Responsive Media Queries)
-- JavaScript (ES6+)
-- Font Awesome Free Icons
+- SCSS / CSS3
+- Vanilla JavaScript
+- Font Awesome
 - Google Fonts
 
-## ▶️ Run Locally
+## Folder Structure
+
+```text
+my-portfolio-webside/
+├── index.html
+├── script.js
+├── site.webmanifest
+├── README.md
+├── assets/
+│   ├── favicons/
+│   │   ├── favicon.ico
+│   │   ├── favicon.svg
+│   │   ├── favicon-16x16.png
+│   │   ├── favicon-32x32.png
+│   │   ├── favicon-48x48.png
+│   │   ├── favicon-180x180.png
+│   │   ├── favicon-192x192.png
+│   │   └── favicon-512x512.png
+│   ├── imgs/
+│   ├── hero-bg.svg
+│   ├── My-Photo.jpeg
+│   └── Mohamed Sokara - CV.pdf
+├── sass/
+│   ├── main.scss
+│   ├── main.css
+│   ├── abstracts/
+│   ├── base/
+│   ├── components/
+│   ├── layout/
+│   └── pages/
+└── packages/
+    └── fontawesome-free-7.2.0-web/
+```
+
+## SCSS Architecture
+
+- `abstracts/` contains theme tokens, Sass variables, and mixins.
+- `base/` contains reset, global rules, typography, focus states, and reveal behavior.
+- `components/` contains reusable UI components such as navigation, buttons, cards, and forms.
+- `layout/` contains spacing and grid helpers.
+- `pages/` contains page-specific section composition.
+
+## Run Locally
+
+This is a static website and does not require a build step.
 
 1. Clone the repository:
 
@@ -53,32 +91,33 @@ For full details, explore the `projects/` subfolders.
 git clone https://github.com/MoSokara/my_portfolio_webside.git
 ```
 
-2. Open `index.html` in a modern browser.
+2. Open the project folder:
 
-No build step or package manager required — purely static files.
+```bash
+cd my_portfolio_webside
+```
 
-## 🧭 How Projects Are Organized
+3. Open `index.html` in a modern browser.
 
-- `projects/designs/` — UI components and mockups (cards, loaders, pages)
-- `projects/applications/` — small browser apps (calculator, converters)
-- `projects/templates/` — multi-page template demos
+## Screenshots
 
-Each project folder typically contains its own `index.html`, `styles.css`, and any assets.
+Add production screenshots here after deployment updates:
 
-## 🙋 Contact
+```text
+assets/screenshots/home-dark.png
+assets/screenshots/home-light.png
+assets/screenshots/projects-mobile.png
+```
 
-- **Name:** Mohamed Sokara
-- **Email:** mosokara2007@gmail.com
-- **Phone:** +20 01023827379
-- **GitHub:** https://github.com/MoSokara
-- **LinkedIn:** https://www.linkedin.com/in/mosokara
+## Author
 
-Feel free to open issues, suggest improvements, or request collaborations.
+**Mohamed Sokara**  
+Frontend Web Developer
 
-## ✨ Credits
+- GitHub: [MoSokara](https://github.com/MoSokara)
+- LinkedIn: [mosokara](https://www.linkedin.com/in/mosokara)
+- Email: [mosokara2007@gmail.com](mailto:mosokara2007@gmail.com)
 
-This collection was built for learning and portfolio purposes. Some templates and tutorials were inspired by online courses and community resources.
+## License
 
-## 📄 License
-
-This repository is available under the MIT License.
+This project is available for portfolio and learning purposes.

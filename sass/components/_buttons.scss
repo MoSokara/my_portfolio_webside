@@ -1,0 +1,54 @@
+// Button variants share sizing and motion so CTAs stay visually consistent.
+.btn {
+  display: inline-flex;
+  min-height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 0.85rem 1.15rem;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  box-shadow: 0 14px 36px rgba(249, 115, 22, 0.26);
+}
+
+.btn--primary:hover {
+  background: var(--color-brand-strong);
+}
+
+.btn--secondary {
+  border-color: var(--color-border-strong);
+  background: var(--color-button-soft);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.btn--ghost {
+  border-color: var(--color-border);
+  background: transparent;
+  color: var(--color-muted);
+}
+
+.btn--ghost:hover {
+  color: var(--color-text);
+}
